@@ -7,7 +7,7 @@ permalink: /
 
 # Welcome! 🌱
 
-<p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
+<p style="blockquote-main">
   Hello and welcome to my simple and stupid <span style="font-style: italic">digital garden</span>.
   Take a look at <span style="font-weight: bold">[[Your first note]]</span> to get started on your <span style="font-style: italic; color: #BF616A">fabulous</span> exploration.
 </p>

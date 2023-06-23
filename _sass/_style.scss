@@ -1,8 +1,22 @@
-$color-primary: hsl(0, 0%, 10%);
-$color-text: hsl(0, 0%, 20%);
-$color-subtext: hsl(0, 0%, 30%);
-$color-border: hsl(0, 0%, 85%);
-$color-box-background: mix($color-primary, white, 4%);
+$nord1: #3b4252 !default;
+$nord2: #434c5e !default;
+$nord3: #4c566a !default;
+
+$nord4: #d8dee9 !default;
+$nord5: #e5e9f0 !default;
+$nord6: #eceff4 !default;
+
+$nord7: #8fbcbb !default;
+$nord8: #88c0d0 !default;
+$nord9: #81a1c1 !default;
+$nord10: #5e81ac !default;
+
+$nord11: #bf616a !default;
+$nord12: #d08770 !default;
+$nord13: #ebcb8b !default;
+$nord14: #a3be8c !default;
+$nord15: #b48ead !default;
+
 $border-radius: 4px;
 $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
   sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
@@ -14,7 +28,6 @@ body {
   line-height: 1.7;
   padding: 4vh 6vw;
   overflow-x: hidden;
-  color: $color-text;
   font-size: 1rem;
   max-width: 63em;
 
@@ -25,14 +38,12 @@ body {
 
 time {
   display: block;
-  color: $color-subtext;
   margin: 0.5em 0 1em;
 }
 
 footer {
   margin: 2em 0;
   font-size: 0.8em;
-  color: mix($color-text, white, 80%);
   padding-top: 1em;
 }
 
@@ -48,7 +59,6 @@ blockquote {
   padding: 1.5em;
   margin: 0;
   font-size: 0.88em;
-  background: $color-box-background;
   border-radius: $border-radius;
 
   p {
@@ -61,7 +71,6 @@ hr {
   border: 0;
   height: 1px;
   margin: 1.5em 0;
-  background: $color-border;
 }
 
 h1,
@@ -79,18 +88,17 @@ a {
   transition: background 300ms;
   padding: 0 0.1em;
   text-decoration: none;
-  border-bottom: 1px solid $color-border;
-  color: $color-primary;
-  &:hover {
-    color: black !important;
-    background: #fffaf1;
-  }
+  -o-transition:.15s;
+  -ms-transition:.15s;
+  -moz-transition:.15s;
+  -webkit-transition:.15s;
+  transition:.15s;
   &:after {
     position: relative;
     top: -0.5em;
     font-size: 0.7em;
     content: "↗";
-    color: #aaaaaa;
+    animation: 1s;
   }
   &.internal-link:after,
   &.footnote:after,
@@ -100,8 +108,6 @@ a {
 }
 
 *:focus {
-  background: #ffe8bc !important;
-  color: black !important;
 }
 
 nav {
@@ -122,25 +128,140 @@ nav {
 }
 
 .backlink-box {
-  background: $color-box-background;
   padding: 1em;
   border-radius: $border-radius;
 }
 
 code {
-  background: #f5f5f5;
   padding: 0.1em 0.2em;
   border-radius: 4px;
 }
 
 .invalid-link {
-  color: #444444;
   cursor: help;
-  background: #fafafa;
   padding: 0 0.1em;
 }
 
 .invalid-link-brackets {
-  color: #ccc;
   cursor: help;
+}
+
+blockquote-main {
+  padding: 3em 1em;
+  border-radius: 4px;
+}
+
+content a.internal-link {
+}
+
+#tooltip-wrapper {
+  padding: 1em;
+  border-radius: 4px;
+  overflow: hidden;
+  position: absolute;
+  width: 400px;
+  height: 250px;
+  font-size: 0.8em;
+  opacity: 0;
+  transition: opacity 100ms;
+}
+
+#tooltip-wrapper:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+  width: 100%;
+  height: 75px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: $nord1;
+    color: $nord4;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $nord4;
+    }
+
+    footer {
+      color: $nord4;
+    }
+
+    .backlink-box {
+      background: $nord2;
+      border-radius: $nord3;
+    }
+
+    time {
+      color: $nord4;
+    }
+
+    blockquote {
+      background: darken($nord1, 5);
+    }
+
+    hr {
+      background: $nord2
+    }
+
+    a {
+      color: $nord4;
+      border-bottom: 1px solid $nord2;
+    }
+
+    a:hover {
+      color: $nord15 !important;
+      background: $nord1;
+    }
+
+    a:after {
+      color: $nord4;
+    }
+
+    focus {
+      background: $nord3 !important;
+      color: $nord4 !important;
+    }
+
+    blockquote-main {
+      background: $nord3;
+    }
+
+    code {
+      background: $nord3;
+    }
+
+    .invalid-link {
+      color: $nord8;
+      background: $nord3;
+    }
+
+    .invalid-link-brackets {
+      color: $nord3;
+    }
+
+    content a.internal-link {
+      border-color: $nord15;
+      background-color: $nord3;
+    }
+
+    #tooltip-wrapper {
+      background: $nord2;
+      border: 1px solid $nord1;
+      box-shadow: 0 5px 10px $nord3;
+    }
+
+    #tooltip-wrapper:after {
+      // background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
+    }
+  }
 }
