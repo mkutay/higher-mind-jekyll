@@ -182,6 +182,10 @@ content a.internal-link {
     background-color: $nord1;
     color: $nord4;
 
+    mark {
+      background: $nord13
+    }
+
     h1,
     h2,
     h3,
@@ -236,7 +240,7 @@ content a.internal-link {
     }
 
     code {
-      background: $nord3;
+      background: $nord2;
     }
 
     .invalid-link {
@@ -261,6 +265,98 @@ content a.internal-link {
 
     #tooltip-wrapper:after {
       background-image: linear-gradient(to bottom, rgba($nord1, 0), rgba($nord1, 0.9));
+    }
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: $nord4;
+    color: $nord1;
+
+    mark {
+      background: $nord13
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $nord1;
+    }
+
+    footer {
+      color: $nord1;
+    }
+
+    .backlink-box {
+      background: $nord5;
+      border-radius: $nord6;
+    }
+
+    time {
+      color: $nord1;
+    }
+
+    blockquote {
+      background: darken($nord4, 5);
+    }
+
+    hr {
+      background: $nord5
+    }
+
+    a {
+      color: $nord1;
+      border-bottom: 1px solid $nord5;
+    }
+
+    a:hover {
+      color: $nord15 !important;
+      background: $nord4;
+    }
+
+    a:after {
+      color: $nord1;
+    }
+
+    focus {
+      background: $nord6 !important;
+      color: $nord1 !important;
+    }
+
+    index-123 {
+      background: $nord5;
+    }
+
+    code {
+      background: $nord6;
+    }
+
+    .invalid-link {
+      color: $nord8;
+      background: $nord4;
+    }
+
+    .invalid-link-brackets {
+      color: $nord4;
+    }
+
+    content a.internal-link {
+      border-color: $nord15;
+      background-color: $nord4;
+    }
+
+    #tooltip-wrapper {
+      background: $nord5;
+      border: 1px solid $nord4;
+      box-shadow: 0 5px 10px $nord6;
+    }
+
+    #tooltip-wrapper:after {
+      background-image: linear-gradient(to bottom, rgba($nord4, 0), rgba($nord4, 0.9));
     }
   }
 }
