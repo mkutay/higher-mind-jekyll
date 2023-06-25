@@ -15,14 +15,14 @@ div.highlight {
   display: grid;
 }
 
-.highlight .c { color: $nord3; font-style: italic } /* Comment */
+.highlight .c { color: darken($nord4, 25); font-style: italic } /* Comment */
 .highlight .err { color: $nord11; background-color: $nord3 } /* Error */
 .highlight .k { font-weight: bold } /* Keyword */
 .highlight .o { font-weight: bold } /* Operator */
-.highlight .cm { color: lighten($nord3, 0.5); font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: lighten($nord3, 0.5); font-weight: bold } /* Comment.Preproc */
-.highlight .c1 { color: lighten($nord3, 0.5); font-style: italic } /* Comment.Single */
-.highlight .cs { color: lighten($nord3, 0.5); font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .cm { color: darken($nord4, 25); font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: darken($nord4, 25); font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: darken($nord4, 25); font-style: italic } /* Comment.Single */
+.highlight .cs { color: darken($nord4, 25); font-weight: bold; font-style: italic } /* Comment.Special */
 .highlight .gd { color: $nord11; background-color: $nord3 } /* Generic.Deleted */
 .highlight .gd .x { color: $nord11; background-color: $nord3 } /* Generic.Deleted.Specific */
 .highlight .ge { font-style: italic } /* Generic.Emph */
